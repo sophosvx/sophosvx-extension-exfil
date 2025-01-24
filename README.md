@@ -25,10 +25,14 @@ A proof-of-concept (PoC) tool written in Go that scans browser directories for s
 
 ## Donations
 
-**BTC** -  `bc1qr3782a20zeerfaqsmrdtpqgk60xgrwx2d0gf8h`
-**LTC** -  `ltc1q48zynexv59s8axz4fxv9w97pzep4egaatttlzu`
-**ETH** -  `0xc85cec434C276d4D8aB601211AB32B5828F9F70B`
-**SOL** - `Zb8iwyRnhFkMLFvgQ5JZ2J3AaYoTJtTnj2CWNQe2TEs`
+**BTC**:  
+`bc1qr3782a20zeerfaqsmrdtpqgk60xgrwx2d0gf8h`  
+**LTC**:  
+`ltc1q48zynexv59s8axz4fxv9w97pzep4egaatttlzu`  
+**ETH**:  
+`0xc85cec434C276d4D8aB601211AB32B5828F9F70B`  
+**SOL**:  
+`Zb8iwyRnhFkMLFvgQ5JZ2J3AaYoTJtTnj2CWNQe2TEs`  
 
 ---
 
